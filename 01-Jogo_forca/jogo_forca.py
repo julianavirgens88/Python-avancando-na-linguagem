@@ -1,5 +1,42 @@
 import random # Agora que já temos todas as palavras na lista devemos acessá-las aleatoriamente. Para isso, vamos importar a biblioteca random.
 
+def jogar():
+
+    imprime_mensagem_abertura
+
+    palavra_secreta = carrega_palavra_secreta()
+
+    letras_acertadas = inicializa_letras_acertadas(palavra_secreta) #["_" for letra in palavra_secreta] # vai criar um traço para cada letra
+
+    enforcou = False
+    acertou = False
+    erros = 0
+
+    print(letras_acertadas)
+
+    while(not enforcou and not acertou):
+
+        chute = pede_chute()
+
+        if(chute in palavra_secreta): #aqui fazemos a marcação das letras, o jogador da o chute e se o chute tiver na palavra, vai encaixando onde a letra fica.
+           marca_chute_correto(chute, letras_acertadas, palavra_secreta)
+        else:
+            erros += 1
+
+        enforcou = erros == 6
+        acertou = "_" not in letras_acertadas
+        print(letras_acertadas)
+
+
+    if(acertou):
+        imprime_mensagem_vencedor()
+        
+    else:
+        imprime_mensagem_perdedor()
+     
+    print("Fim do jogo")
+
+
 def imprime_mensagem_abertura():
     print("*********************************")
     print("***Bem vindo ao jogo da Forca!***")
@@ -23,45 +60,24 @@ def carrega_palavra_secreta():
 def inicializa_letras_acertadas(palavra):
     return ["_" for letra in palavra]  
 
+def pede_chute():
+    chute = input("Qual letra? ")
+    chute = chute.strip().upper()
+    return chute
 
-def jogar():
+def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
+     index = 0
+     for letra in palavra_secreta:
+        if(chute == letra):
+            letras_acertadas[index] = letra
+        index += 1
 
-    imprime_mensagem_abertura
+def imprime_mensagem_vencedor():
+    print("Você ganhou!!")
 
-    palavra_secreta = carrega_palavra_secreta()
+def imprime_mensagem_perdedor():
+    print("Você perdeu!")
 
-    letras_acertadas = inicializa_letras_acertadas(palavra_secreta) #["_" for letra in palavra_secreta] # vai criar um traço para cada letra
-
-    enforcou = False
-    acertou = False
-    erros = 0
-
-    print(letras_acertadas)
-
-    while(not enforcou and not acertou):
-
-        chute = input("Qual letra? ")
-        chute = chute.strip().upper()
-
-        if(chute in palavra_secreta):
-            index = 0
-            for letra in palavra_secreta:
-                if(chute == letra):
-                    letras_acertadas[index] = letra
-                index += 1
-        else:
-            erros += 1
-
-        enforcou = erros == 6
-        acertou = "_" not in letras_acertadas
-        print(letras_acertadas)
-
-
-    if(acertou):
-        print("Você ganhou!!")
-    else:
-        print("Você perdeu!!")
-    print("Fim do jogo")
 
 if(__name__ == "__main__"):
     jogar()
