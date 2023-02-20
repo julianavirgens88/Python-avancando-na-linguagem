@@ -1,7 +1,7 @@
 # Para criar um arquivo que pegue as palavras e a máquina escolha qual vai utilizar para o jogador:
 
 # No prompt de comando, criar o arquivo:
-# open("nomedoarquivo.txt","w") {w-write; r-read; a-append (acrescentar)} sempre nessa ordem, o nome do arquivo e o modificador de acesso.
+# open("nomedoarquivo.txt","w") {w-write; r-read; a-append; r+ - significa leitura e escrita} (acrescentar)} sempre nessa ordem, o nome do arquivo e o modificador de acesso.
 # Importante é que não precisamos passar o modificador de acesso, pois o segundo parâmetro é opcional:
 # arquivo = open("entrada.txt")
 #Nesse caso será utilizado o modo de leitura (r) por padrão.
