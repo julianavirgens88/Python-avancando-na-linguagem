@@ -69,3 +69,20 @@
 # Como vimos, há um \n ao final de cada linha, de cada palavra, mas queremos somente a palavra. Já vimos como tirar espaços em branco no início e no fim da string, basta utilizar a função strip(), que também remove caracteres especiais, como o \n.
 
 # Sabendo disso tudo, podemos implementar a funcionalidade de leitura de arquivo no nosso jogo. Faremos isso no próximo vídeo.
+
+
+# Veja o código abaixo que justamente usa a função close :
+
+# logo = open('palavras.txt', 'r')
+# data = logo.read()
+# logo.close()
+# Agora imagine que dê algum problema na hora da leitura quando chamarmos a função read(). Será que mesmo com erro o arquivo será fechado?
+
+# Se for algum erro grave, o programa pode parar a execução sem ter fechado o arquivo! Isso seria muito ruim ...
+
+# Para evitar esse tipo de situação, o Python criou uma sintaxe especial para abertura de arquivo. Veja só:
+
+# with open("palavras.txt") as arquivo:
+#     for linha in arquivo:
+#         print(linha)
+# Repare que o with usa a função open. Repare também que não fechamos o arquivo. Isso não é mais necessário pois o Python vai cuidar disso e, mesmo com erro, garantirá o fechamento do arquivo! Muito melhor não?
