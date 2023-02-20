@@ -59,7 +59,7 @@
 # Mas podemos reparar que existe uma linha entre cada fruta. Por que isso acontece? Para ver melhor, vamos ler somente uma linha do arquivo, com a função readLine():
 
 # >>> arquivo = open("palavras.txt", "r")
-# >>> linha = arquivo.readline()
+# >>> linha = arquivo.readline() aqui vai ler apenas a primeira linha do arquivo.
 # >>> linha
 # 'banana\n'
 
