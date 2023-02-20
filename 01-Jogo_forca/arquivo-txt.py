@@ -1,9 +1,9 @@
 # Para criar um arquivo que pegue as palavras e a máquina escolha qual vai utilizar para o jogador:
 
 # No prompt de comando, criar o arquivo:
-# open("nomedoarquivo.txt","w") {w-write; r-read; a-append (acrescentar)}
+# open("nomedoarquivo.txt","w") {w-write; r-read; a-append (acrescentar)} sempre nessa ordem, o nome do arquivo e o modificador de acesso.
 # abrimos um arquivo de texto
-# escreve o que quwr no arquivo: arquivo.write("banana\n") fazer dessa forma vai criar uma lista, com uma palavra abaixo da outra.
+# escreve o que quer no arquivo: arquivo.write("banana\n") fazer dessa forma vai criar uma lista, com uma palavra abaixo da outra.
 # arquivo.write("maça\n")...
 # arquivo.close() - para fechar o arquivo
 # no gitbash encontra o arquivo pelo comando ls
