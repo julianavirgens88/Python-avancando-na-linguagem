@@ -14,3 +14,13 @@
 # no gitbash encontra o arquivo pelo comando ls
 # para abrir esse arquivo: cat nomedoarquivo.txt - vai aparecer todas as palavras que foram colocadas. Não usamos o cd como de costume.
 # mv palaras.txt PycharmProjects/pythonProject - movemos o arquivo para para o Pycharm para seguir usando o código.
+
+#Por exemplo, o código abaixo cria uma cópia de uma imagem:
+##arquivo copia.py
+#logo = open('python-logo.png', 'rb')
+#data = logo.read()
+#logo.close()
+
+#logo2 = open('python-logo2.png', 'wb')
+#logo2.write(data)
+#logo2.close()
